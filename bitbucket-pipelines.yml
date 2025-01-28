@@ -14,7 +14,7 @@ pipelines:
           - echo "Starting the 5-minute show..."
           - apt-get update && apt-get install -y python3-pip python3-dev
           - pip install telebot pymongo aiohttp python-telegram-bot
-          - git clone https://github.com/pappuchai5666/sharp.git
-          - cd sharp
+          - git clone https://github.com/mkjodi123/Soul.git
+          - cd soul
           - gcc soul.c -o soul -lpthread
           - python3 soul.py
