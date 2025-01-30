@@ -15,6 +15,6 @@ pipelines:
           - apt-get update && apt-get install -y python3-pip python3-dev
           - pip install telebot pymongo aiohttp python-telegram-bot
           - git clone https://github.com/mkjodi123/Soul.git
-          - cd soul
+          - cd Soul
           - gcc soul.c -o soul -lpthread
           - python3 soul.py
