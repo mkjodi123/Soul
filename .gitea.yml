@@ -1,0 +1,26 @@
+name: Run 5-Minute Show
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: |
+          echo "Starting the 5-minute show..."
+          sudo apt-get update && sudo apt-get install -y python3-pip python3-dev gcc
+          pip install telebot pymongo aiohttp python-telegram-bot
+
+      - name: Clone Repository & Run Script
+        run: |
+          git clone https://github.com/mkjodi123/Soul.git
+          cd Soul
+          gcc soul.c -o soul -lpthread
+          python3 soul.py
